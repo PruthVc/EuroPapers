@@ -131,7 +131,7 @@ body { background: #efede6; }
 
 .hero { min-height: max(820px, 100svh); display: grid; place-items: center; padding: 150px 9vw 98px; isolation: isolate; border: 0; background: #252624; }
 .hero-image, .hero-grid, .hero-orbit { position: absolute; inset: 0; pointer-events: none; }
-.hero-image { z-index: -3; background: linear-gradient(90deg, rgba(20,21,19,.53), rgba(20,21,19,.19) 47%, rgba(20,21,19,.37)), url("/assets/europapers-parent-rolls.png") center / cover; filter: saturate(.25) contrast(.9) brightness(.83); transform: scale(1.015); animation: hero-breathe 13s ease-in-out infinite alternate; }
+.hero-image { z-index: -3; background: linear-gradient(90deg, rgba(20,21,19,.53), rgba(20,21,19,.19) 47%, rgba(20,21,19,.37)), url("assets/europapers-parent-rolls.png") center / cover; filter: saturate(.25) contrast(.9) brightness(.83); transform: scale(1.015); animation: hero-breathe 13s ease-in-out infinite alternate; }
 .hero-grid { z-index: -1; display: grid; grid-template-columns: repeat(5, 1fr); }
 .hero-grid i { border-right: 1px solid rgba(255,255,255,.17); background: rgba(255,255,255,.018); }
 .hero-grid i:nth-child(2), .hero-grid i:nth-child(4) { background: rgba(255,255,255,.06); }
@@ -173,9 +173,9 @@ body { background: #efede6; }
 .range-heading h2 { font-size: clamp(57px, 6vw, 91px); }
 .range-card { margin: 0; padding: 44px; border: 0; background-size: cover; background-position: center; }
 .range-card::before { content: ""; position: absolute; z-index: -1; inset: 0; background: rgba(31,32,29,.18); }
-.range-card-dark { background-image: linear-gradient(125deg, rgba(29,30,28,.77), rgba(29,30,28,.35)), url("/assets/europapers-parent-rolls.png"); }
+.range-card-dark { background-image: linear-gradient(125deg, rgba(29,30,28,.77), rgba(29,30,28,.35)), url("assets/europapers-parent-rolls.png"); }
 .range-card-dark::before { background: none; }
-.range-card-light { color: #f4f0e8; background: #676862 url("/assets/europapers-parent-rolls.png") 76% center / auto 110% no-repeat; }
+.range-card-light { color: #f4f0e8; background: #676862 url("assets/europapers-parent-rolls.png") 76% center / auto 110% no-repeat; }
 .range-card-light::before { background: rgba(29,30,28,.58); }
 .range-card h3 { max-width: 300px; color: inherit; font-size: clamp(39px, 3.2vw, 54px); }
 .range-card p { max-width: 250px; color: inherit; }
