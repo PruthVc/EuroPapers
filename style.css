@@ -117,3 +117,82 @@ footer small { color: #aaa69e; font: 10px "DM Mono"; letter-spacing: .08em; }
   .visit { display: block; padding: 100px 8vw; }.visit h2 { font-size: 58px; }.contact-info { margin-top: 65px; }
   footer { grid-template-columns: 1fr 1fr; padding: 33px 8vw 25px; }footer p { display: none; }footer small { grid-row: 2; }.back-to-top { grid-row: 2; }
 }
+
+/* Navigator-inspired editorial framing, adapted to the EuroPapers palette */
+body { background: #efede6; }
+.site-header { position: absolute; height: 96px; color: #fff; mix-blend-mode: normal; padding: 0 4vw; }
+.menu-mark { width: 28px; height: 42px; display: flex; flex-direction: column; justify-content: center; gap: 5px; }
+.menu-mark i { width: 8px; height: 8px; display: block; border-radius: 50%; background: currentColor; }
+.site-header nav { position: absolute; left: 50%; transform: translateX(-50%); gap: 35px; color: #fff; }
+.site-header nav a, .header-call { opacity: .9; transition: opacity .25s; }
+.site-header nav a:hover, .header-call:hover { opacity: .58; }
+.header-end { display: flex; align-items: center; gap: 28px; }
+.header-end .wordmark { color: #fff; }
+
+.hero { min-height: max(820px, 100svh); display: grid; place-items: center; padding: 150px 9vw 98px; isolation: isolate; border: 0; background: #252624; }
+.hero-image, .hero-grid, .hero-orbit { position: absolute; inset: 0; pointer-events: none; }
+.hero-image { z-index: -3; background: linear-gradient(90deg, rgba(20,21,19,.53), rgba(20,21,19,.19) 47%, rgba(20,21,19,.37)), url("/assets/europapers-parent-rolls.png") center / cover; filter: saturate(.25) contrast(.9) brightness(.83); transform: scale(1.015); animation: hero-breathe 13s ease-in-out infinite alternate; }
+.hero-grid { z-index: -1; display: grid; grid-template-columns: repeat(5, 1fr); }
+.hero-grid i { border-right: 1px solid rgba(255,255,255,.17); background: rgba(255,255,255,.018); }
+.hero-grid i:nth-child(2), .hero-grid i:nth-child(4) { background: rgba(255,255,255,.06); }
+.hero-grid i:last-child { border: 0; }
+.hero-orbit { z-index: -1; width: min(43vw, 560px); height: min(43vw, 560px); inset: auto; top: 50%; left: 50%; border: 1px solid rgba(238,232,219,.38); border-radius: 50%; transform: translate(-50%, -50%); }
+.hero-orbit::after { content: ""; position: absolute; inset: 11%; border: 1px solid rgba(238,232,219,.15); border-radius: 50%; }
+.hero-copy { max-width: 800px; display: flex; flex-direction: column; align-items: center; text-align: center; color: #fff; }
+.hero .eyebrow { color: rgba(255,255,255,.79); }
+.hero h1 { max-width: 840px; color: #fff; font-size: clamp(74px, 8.3vw, 142px); text-shadow: 0 2px 30px rgba(0,0,0,.17); }
+.hero .intro { max-width: 340px; margin: 28px 0 28px; color: rgba(255,255,255,.91); }
+.hero .arrow-link { color: #fff; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,.62); }
+.hero .side-caption { right: 4vw; top: auto; bottom: 116px; color: rgba(255,255,255,.76); }
+.hero-roll { width: 210px; height: 210px; right: -112px; bottom: 114px; z-index: -1; opacity: .32; filter: grayscale(1); box-shadow: none; }
+.hero-banner { width: 100%; position: absolute; right: 0; bottom: 29px; margin: 0; overflow: hidden; color: rgba(255,255,255,.9); font: 500 clamp(10px, 1.2vw, 15px) "DM Mono", monospace; letter-spacing: .49em; text-align: center; text-transform: uppercase; white-space: nowrap; }
+.hero-banner span { margin: 0 2vw; opacity: .7; }
+@keyframes hero-breathe { from { transform: scale(1.015); } to { transform: scale(1.075); } }
+
+.intro-section { min-height: 74vh; position: relative; overflow: hidden; grid-template-columns: .8fr 2fr 1fr; gap: 20px; padding: 160px 9vw; background: #efede6; }
+.intro-section::before { content: ""; width: 48vw; height: 48vw; position: absolute; right: -14vw; bottom: -26vw; border: 1px solid #d6d1c7; border-radius: 50%; }
+.intro-section::after { content: ""; width: 100%; height: 1px; position: absolute; right: 0; bottom: 19%; background: #d8d3c9; }
+.intro-section > * { position: relative; z-index: 1; }
+.intro-section .eyebrow { grid-column: 1; align-self: start; margin-top: 12px; }
+.intro-section h2 { grid-column: 2; max-width: 710px; font-size: clamp(59px, 7vw, 112px); }
+.intro-section .body-copy { grid-column: 3; max-width: 275px; padding-bottom: 9px; }
+.section-count { margin: 0; color: #76736c; font: 11px "DM Mono", monospace; letter-spacing: .14em; }
+
+.unfold-section { background: #292a27; color: #f4f0e8; }
+.unfold-section::before { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, transparent 19.8%, rgba(255,255,255,.1) 20%, transparent 20.2%, transparent 59.8%, rgba(255,255,255,.1) 60%, transparent 60.2%); pointer-events: none; }
+.unfold-copy .eyebrow, .scene-label { color: #bcb8ae; }
+.unfold-copy h2 { font-size: clamp(58px, 6.5vw, 106px); }
+.unfold-copy > p:last-of-type { color: #cecbc2; }
+.scene-progress span { background: #d2cec4; }
+.product-scene { filter: contrast(.98); }
+
+.range { position: relative; overflow: hidden; grid-template-columns: 1fr 1.12fr 1.12fr; gap: 1px; padding: 0; background: #d0cbc0; }
+.range-watermark { position: absolute; z-index: 0; top: -2.9vw; left: -1vw; margin: 0; color: rgba(34,35,33,.06); font-size: 17vw; font-weight: 700; letter-spacing: -.105em; pointer-events: none; white-space: nowrap; }
+.range-heading, .range-card { z-index: 1; position: relative; min-height: 585px; }
+.range-heading { display: flex; flex-direction: column; justify-content: flex-end; padding: 60px 4.8vw; background: #efede6; }
+.range-heading h2 { font-size: clamp(57px, 6vw, 91px); }
+.range-card { margin: 0; padding: 44px; border: 0; background-size: cover; background-position: center; }
+.range-card::before { content: ""; position: absolute; z-index: -1; inset: 0; background: rgba(31,32,29,.18); }
+.range-card-dark { background-image: linear-gradient(125deg, rgba(29,30,28,.77), rgba(29,30,28,.35)), url("/assets/europapers-parent-rolls.png"); }
+.range-card-dark::before { background: none; }
+.range-card-light { color: #f4f0e8; background: #676862 url("/assets/europapers-parent-rolls.png") 76% center / auto 110% no-repeat; }
+.range-card-light::before { background: rgba(29,30,28,.58); }
+.range-card h3 { max-width: 300px; color: inherit; font-size: clamp(39px, 3.2vw, 54px); }
+.range-card p { max-width: 250px; color: inherit; }
+.range-card-light .button { color: #f4f0e8; border-color: #f4f0e8; }
+.range-card-light .button:hover { color: #222321; background: #f4f0e8; }
+
+.visit { min-height: 70vh; position: relative; overflow: hidden; padding: 155px 9vw 125px; background: #d8d3c8; }
+.visit::before { content: ""; width: min(50vw, 680px); height: min(50vw, 680px); position: absolute; right: -13vw; bottom: -30vw; border: 1px solid rgba(34,35,33,.17); border-radius: 50%; }
+.visit > * { position: relative; z-index: 1; }
+.visit h2 { font-size: clamp(59px, 7vw, 108px); }
+footer { background: #1d1e1c; padding: 52px 5vw 29px; }
+
+@media (max-width: 760px) {
+  .site-header { height: 78px; padding: 0 7vw; }.site-header nav, .header-call { display: none; }.header-end { gap: 0; }
+  .hero { min-height: 760px; padding: 136px 8vw 78px; }.hero h1 { font-size: 72px; }.hero-orbit { width: 72vw; height: 72vw; }.hero-roll { display: block; width: 120px; height: 120px; right: -65px; bottom: 100px; }.hero-banner { bottom: 24px; font-size: 9px; letter-spacing: .29em; text-align: left; }.hero-banner span { margin: 0 12px; }
+  .intro-section { min-height: auto; display: grid; grid-template-columns: 1fr; gap: 0; padding: 105px 8vw 120px; }.intro-section .section-count { grid-row: 1; margin-bottom: 30px; }.intro-section .eyebrow { grid-column: 1; grid-row: 2; margin: 0 0 23px; }.intro-section h2 { grid-column: 1; grid-row: 3; font-size: 56px; }.intro-section .body-copy { grid-column: 1; grid-row: 4; max-width: 315px; margin-top: 38px; }
+  .unfold-section::before { background: linear-gradient(90deg, transparent 49.7%, rgba(255,255,255,.09) 50%, transparent 50.3%); }
+  .range { display: grid; grid-template-columns: 1fr; }.range-heading, .range-card { min-height: 420px; }.range-heading { padding: 55px 8vw; }.range-card { margin: 0; padding: 34px 8vw; }.range-watermark { top: 40px; left: -8px; font-size: 29vw; }
+  .visit { padding: 105px 8vw; }
+}
