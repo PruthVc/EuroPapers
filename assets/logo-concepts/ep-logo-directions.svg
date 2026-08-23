@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1160" viewBox="0 0 1600 1160" role="img" aria-labelledby="title description">
+  <title id="title">EuroPapers logo direction concepts</title>
+  <desc id="description">Two evolutionary logo directions and two complete rebrand directions in emerald, walnut, ivory and antique gold.</desc>
+  <defs>
+    <style>
+      .label{font:700 16px Arial,Helvetica,sans-serif;letter-spacing:3px}.note{font:400 17px Arial,Helvetica,sans-serif;letter-spacing:.3px}.word{font:600 44px Arial,Helvetica,sans-serif;letter-spacing:-2px}.word-light{font:400 44px Arial,Helvetica,sans-serif;letter-spacing:-2px}.tiny{font:700 14px Arial,Helvetica,sans-serif;letter-spacing:2.6px}.micro{font:400 15px Arial,Helvetica,sans-serif;letter-spacing:.2px}
+    </style>
+  </defs>
+
+  <rect width="1600" height="1160" fill="#ebe5d9"/>
+  <text x="80" y="76" class="label" fill="#93603b">EUROPAPERS / LOGO EXPLORATION</text>
+  <text x="80" y="119" class="note" fill="#4d6257">Two evolutions that preserve the current paper-loop DNA, followed by two cleaner rebrand directions.</text>
+
+  <!-- Evolution 01 -->
+  <g transform="translate(80 176)">
+    <rect width="690" height="410" rx="18" fill="#082f29"/>
+    <text x="42" y="52" class="tiny" fill="#e2c49a">EVOLUTION 01 · CONTINUOUS ROLL</text>
+    <path d="M114 266C72 265 56 224 70 184C83 145 129 134 158 159C184 181 175 224 149 237C122 251 97 227 106 201C115 175 149 176 161 199L209 300C220 323 252 329 271 311C294 288 286 248 258 239C244 234 231 236 220 242" fill="none" stroke="#ebe5d9" stroke-width="23" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="106" cy="201" r="9" fill="#d3a576"/>
+    <path d="M190 272L230 272" stroke="#d3a576" stroke-width="5" stroke-linecap="round"/>
+    <text x="327" y="239" class="word" fill="#ebe5d9">EURO</text><text x="454" y="239" class="word-light" fill="#ebe5d9">PAPERS</text>
+    <text x="327" y="276" class="micro" fill="#dbe2d7">A simplified continuation of the existing loop.</text>
+    <line x1="42" x2="648" y1="339" y2="339" stroke="#d3a576" stroke-opacity=".45"/>
+    <text x="42" y="373" class="micro" fill="#e2c49a">Best for: a familiar transition with a premium finish.</text>
+  </g>
+
+  <!-- Evolution 02 -->
+  <g transform="translate(830 176)">
+    <rect width="690" height="410" rx="18" fill="#ded7c9"/>
+    <text x="42" y="52" class="tiny" fill="#93603b">EVOLUTION 02 · OPEN MONOGRAM</text>
+    <circle cx="156" cy="223" r="96" fill="none" stroke="#0c4a3f" stroke-width="28" stroke-dasharray="460 145" stroke-linecap="round" transform="rotate(-44 156 223)"/>
+    <path d="M146 162V281M146 162H220M146 221H207M146 281H220" stroke="#0c4a3f" stroke-width="18" stroke-linecap="round" stroke-linejoin="round"/>
+    <circle cx="224" cy="286" r="11" fill="#d3a576"/>
+    <text x="312" y="224" class="word" fill="#173c34">EURO</text><text x="439" y="224" class="word-light" fill="#173c34">PAPERS</text>
+    <text x="312" y="261" class="micro" fill="#4d6257">A tighter EP aperture, designed to work small.</text>
+    <line x1="42" x2="648" y1="339" y2="339" stroke="#93603b" stroke-opacity=".4"/>
+    <text x="42" y="373" class="micro" fill="#70462d">Best for: packaging, social avatars and dispenser hardware.</text>
+  </g>
+
+  <!-- Rebrand 01 -->
+  <g transform="translate(80 640)">
+    <rect width="690" height="410" rx="18" fill="#382015"/>
+    <text x="42" y="52" class="tiny" fill="#e2c49a">REBRAND 01 · PAPER FOLD</text>
+    <path d="M96 286L96 156L224 156L272 204L272 286Z" fill="none" stroke="#ebe5d9" stroke-width="16" stroke-linejoin="round"/>
+    <path d="M224 156V204H272" fill="none" stroke="#d3a576" stroke-width="16" stroke-linejoin="round"/>
+    <path d="M126 198H215M126 235H230" stroke="#ebe5d9" stroke-width="13" stroke-linecap="round"/>
+    <path d="M126 272H191" stroke="#d3a576" stroke-width="13" stroke-linecap="round"/>
+    <text x="327" y="239" class="word" fill="#ebe5d9">EURO</text><text x="454" y="239" class="word-light" fill="#ebe5d9">PAPERS</text>
+    <text x="327" y="276" class="micro" fill="#e2c49a">A paper-specification brand mark with quiet authority.</text>
+    <line x1="42" x2="648" y1="339" y2="339" stroke="#d3a576" stroke-opacity=".45"/>
+    <text x="42" y="373" class="micro" fill="#e2c49a">Best for: a clear professional and trade-facing identity.</text>
+  </g>
+
+  <!-- Rebrand 02 -->
+  <g transform="translate(830 640)">
+    <rect width="690" height="410" rx="18" fill="#0c4a3f"/>
+    <text x="42" y="52" class="tiny" fill="#e2c49a">REBRAND 02 · CORE &amp; SHEET</text>
+    <circle cx="164" cy="222" r="88" fill="none" stroke="#ebe5d9" stroke-width="18"/>
+    <circle cx="164" cy="222" r="43" fill="none" stroke="#d3a576" stroke-width="17"/>
+    <path d="M164 134V310M76 222H252" stroke="#0c4a3f" stroke-width="15" stroke-linecap="round"/>
+    <path d="M265 165L298 165L298 279L265 279" fill="none" stroke="#ebe5d9" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="344" y="239" class="word" fill="#ebe5d9">EURO</text><text x="471" y="239" class="word-light" fill="#ebe5d9">PAPERS</text>
+    <text x="344" y="276" class="micro" fill="#dbe2d7">A distinctive core motif paired with a precise P form.</text>
+    <line x1="42" x2="648" y1="339" y2="339" stroke="#d3a576" stroke-opacity=".45"/>
+    <text x="42" y="373" class="micro" fill="#e2c49a">Best for: a more memorable, design-led premium rebrand.</text>
+  </g>
+
+  <text x="80" y="1116" class="micro" fill="#4d6257">Palette: deep emerald · walnut · warm ivory · antique gold. All concepts are vector directions for discussion, not production-ready trademark artwork.</text>
+</svg>
