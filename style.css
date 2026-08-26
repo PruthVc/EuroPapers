@@ -482,11 +482,27 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   .site-header nav a[aria-current="page"] { color: var(--gold-soft); }
   .site-header nav a:focus-visible,
   .menu-toggle:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 6px; }
-  .site-header.is-menu-open { position: fixed; color: var(--paper); background: transparent; box-shadow: none; }
+  .site-header.is-menu-open {
+    position: fixed;
+    color: var(--paper);
+    background: transparent;
+    box-shadow: none;
+    /* A scrolled header uses backdrop-filter, which otherwise contains fixed children on mobile. */
+    backdrop-filter: none;
+  }
   .site-header.is-menu-open .brand,
   .site-header.is-menu-open .menu-toggle { color: var(--paper); }
   .site-header.is-menu-open .brand-mark { color: var(--paper); background: var(--walnut); border-color: rgba(226,196,154,.46); }
-  .site-header.is-menu-open nav { clip-path: inset(0 0 0 0); visibility: visible; pointer-events: auto; transition-delay: 0s; }
+  .site-header.is-menu-open nav {
+    height: 100dvh;
+    min-height: 100svh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    clip-path: inset(0 0 0 0);
+    visibility: visible;
+    pointer-events: auto;
+    transition-delay: 0s;
+  }
   body.menu-open { overflow: hidden; }
 }
 
