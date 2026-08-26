@@ -334,6 +334,174 @@ footer small, footer .back-to-top { color: var(--gold-soft); }
   .family-portrait-stage .family-portrait-image { width: 116%; height: 116%; inset: -8%; }
 }
 
+/* The loop mark inherits the wordmark colour in every header state and footer. */
+.brand-mark {
+  width: 30px;
+  height: 25px;
+  display: block;
+  flex: 0 0 30px;
+  border: 0 !important;
+  border-radius: 0;
+  color: inherit !important;
+  background: currentColor !important;
+  font-size: 0;
+  letter-spacing: 0;
+  -webkit-mask-image: url("assets/brand/europapers-loop-mark.png");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  mask-image: url("assets/brand/europapers-loop-mark.png");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+@media (max-width: 660px) {
+  .brand-mark { width: 28px; height: 23px; flex-basis: 28px; }
+}
+
+/* Personal project credit: understated, readable and consistently placed. */
+footer { grid-template-columns: 1.2fr 1fr minmax(230px, 1fr) auto; }
+.footer-meta { display: grid; gap: 4px; }
+footer .project-credit {
+  color: var(--gold-soft);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: .025em;
+  line-height: 1.45;
+}
+footer .project-credit a {
+  color: var(--paper);
+  border-bottom: 1px solid rgba(235,229,217,.45);
+  font-weight: 700;
+  transition: color .2s ease, border-color .2s ease;
+}
+footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--gold-soft); }
+
+@media (max-width: 660px) {
+  footer { grid-template-columns: 1fr auto; }
+  footer .footer-meta { grid-column: 1; grid-row: 2; }
+  footer .back-to-top { grid-column: 2; grid-row: 2; align-self: start; }
+}
+
+/* Home accreditation marks: formal, but deliberately secondary to the About EP message. */
+.home-standards {
+  grid-template-columns: minmax(0, 1.1fr) minmax(220px, .75fr) auto;
+  grid-template-rows: auto auto;
+  align-items: end;
+  gap: 28px 6vw;
+}
+.home-standards-intro { grid-row: 1 / span 2; }
+.home-accreditation-marks {
+  min-width: 0;
+  grid-column: 2 / -1;
+  display: flex;
+  align-items: center;
+  justify-self: start;
+  gap: clamp(18px, 2.5vw, 34px);
+  padding: 13px 0;
+  border-top: 1px solid rgba(23,60,52,.24);
+  border-bottom: 1px solid rgba(23,60,52,.24);
+}
+.home-accreditation-marks figure { margin: 0; }
+.home-accreditation-marks img {
+  display: block;
+  max-width: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+}
+.home-accreditation-chsa { width: clamp(150px, 12vw, 180px); }
+.home-accreditation-chsa img { width: 100%; height: auto; }
+.home-accreditation-fsc { width: 58px; flex: 0 0 58px; }
+.home-accreditation-fsc img { width: 100%; height: auto; }
+
+/* Mobile navigation: a focused full-screen menu keeps every page reachable on smaller screens. */
+.menu-toggle { display: none; }
+@media (max-width: 900px) {
+  .site-header .header-contact { display: none; }
+  .site-header .menu-toggle {
+    position: relative;
+    z-index: 2;
+    width: 44px;
+    height: 44px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 0;
+    color: inherit;
+    background: transparent;
+    cursor: pointer;
+  }
+  .menu-toggle-icon {
+    width: 22px;
+    height: 16px;
+    display: grid;
+    grid-template-rows: repeat(3, 2px);
+    align-content: space-between;
+  }
+  .menu-toggle-icon i {
+    width: 22px;
+    height: 2px;
+    display: block;
+    background: currentColor;
+    border-radius: 999px;
+    transform-origin: center;
+    transition: transform .26s cubic-bezier(.2,.72,.25,1), opacity .18s ease;
+  }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon i:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon i:nth-child(2) { opacity: 0; transform: scaleX(.25); }
+  .menu-toggle[aria-expanded="true"] .menu-toggle-icon i:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .site-header nav {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: clamp(22px, 4vh, 34px);
+    padding: 112px 8vw 54px;
+    color: var(--paper);
+    background-color: var(--emerald-deep);
+    background-image: linear-gradient(135deg, rgba(4,34,29,.97), rgba(7,57,48,.9)), url("assets/emerald-texture.png");
+    background-position: center;
+    background-size: cover;
+    clip-path: inset(0 0 100% 0);
+    visibility: hidden;
+    pointer-events: none;
+    transition: clip-path .4s cubic-bezier(.2,.72,.25,1), visibility 0s linear .4s;
+  }
+  .site-header nav a {
+    color: var(--paper);
+    opacity: 1;
+    font-size: clamp(32px, 9vw, 48px);
+    font-weight: 500;
+    letter-spacing: -.06em;
+    line-height: .95;
+  }
+  .site-header nav a[aria-current="page"] { color: var(--gold-soft); }
+  .site-header nav a:focus-visible,
+  .menu-toggle:focus-visible { outline: 2px solid var(--gold-soft); outline-offset: 6px; }
+  .site-header.is-menu-open { position: fixed; color: var(--paper); background: transparent; box-shadow: none; }
+  .site-header.is-menu-open .brand,
+  .site-header.is-menu-open .menu-toggle { color: var(--paper); }
+  .site-header.is-menu-open .brand-mark { color: var(--paper); background: var(--walnut); border-color: rgba(226,196,154,.46); }
+  .site-header.is-menu-open nav { clip-path: inset(0 0 0 0); visibility: visible; pointer-events: auto; transition-delay: 0s; }
+  body.menu-open { overflow: hidden; }
+}
+
+@media (max-width: 660px) {
+  .home-standards { display: block; }
+  .home-accreditation-marks {
+    width: 100%;
+    margin: 37px 0 29px;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .home-accreditation-chsa { width: min(53vw, 170px); }
+  .home-accreditation-fsc { width: 52px; flex-basis: 52px; }
+}
+
 /* Product-scale calibration: preserve the motion language while matching each pack family to its stage. */
 #eloquence-luxury .family-portrait-image,
 #eloquence-ultra .family-portrait-image,

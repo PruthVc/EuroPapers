@@ -1,11 +1,41 @@
 const scene = document.querySelector('#product-scene');
 const unfolding = document.querySelector('.unfold-section');
 const header = document.querySelector('[data-header]');
+const menuToggle = document.querySelector('[data-menu-toggle]');
+const siteNavigation = document.querySelector('#site-navigation');
 const pillarStage = document.querySelector('[data-pillar-stage]');
 const scrollPillars = [...document.querySelectorAll('[data-scroll-pillar]')];
 const pillarSources = [...document.querySelectorAll('[data-pillar-source]')];
 
 const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
+
+function setMenuState(isOpen) {
+  if (!menuToggle || !siteNavigation || !header) return;
+  header.classList.toggle('is-menu-open', isOpen);
+  document.body.classList.toggle('menu-open', isOpen);
+  menuToggle.setAttribute('aria-expanded', String(isOpen));
+  menuToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+
+  if (isOpen) {
+    requestAnimationFrame(() => siteNavigation.querySelector('a')?.focus());
+  }
+}
+
+menuToggle?.addEventListener('click', () => {
+  setMenuState(menuToggle.getAttribute('aria-expanded') !== 'true');
+});
+
+siteNavigation?.addEventListener('click', (event) => {
+  if (event.target.closest('a')) setMenuState(false);
+});
+
+window.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') setMenuState(false);
+});
+
+window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
+  if (event.matches) setMenuState(false);
+});
 
 function updateScrollScene() {
   header?.classList.toggle('is-scrolled', window.scrollY > 28);
