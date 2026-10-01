@@ -72,24 +72,24 @@ footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; align-items: 
 :root {
   --paper: #f3efe5;
   --paper-deep: #e2d8c8;
-  --ink: #173c34;
-  --ink-soft: #4e6258;
+  --ink: #292664;
+  --ink-soft: #292664;
   --line: #cdbdaa;
   --aqua: #c89a6c;
   --aqua-deep: #805033;
-  --navy: #0d453a;
-  --emerald: #0c4a3f;
-  --emerald-deep: #082f29;
+  --navy: #292664;
+  --emerald: #292664;
+  --emerald-deep: #1d1a52;
   --walnut: #70462d;
   --walnut-deep: #382015;
 }
 
 ::selection { color: var(--paper); background: var(--emerald); }
-.site-header.is-scrolled { background: rgba(243,239,229,.95); box-shadow: 0 1px 0 rgba(23,60,52,.13); }
+.site-header.is-scrolled { background: rgba(243,239,229,.95); box-shadow: 0 1px 0 rgba(41,38,100,.13); }
 .brand-mark { background: var(--emerald); }
 .hero { background: var(--emerald-deep); }
 .hero-image { filter: grayscale(.52) sepia(.22) saturate(.68) contrast(.92) brightness(.65); }
-.hero-overlay { background: linear-gradient(90deg, rgba(4,38,32,.87), rgba(7,52,44,.37) 51%, rgba(6,36,31,.72)), linear-gradient(180deg, rgba(5,30,26,.22), rgba(7,42,36,.5)); }
+.hero-overlay { background: linear-gradient(90deg, rgba(29,26,82,.87), rgba(41,38,100,.37) 51%, rgba(29,26,82,.72)), linear-gradient(180deg, rgba(29,26,82,.22), rgba(41,38,100,.5)); }
 .hero-rail span { color: #ddb98d; }
 
 .unfold-section,
@@ -100,18 +100,18 @@ footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; align-items: 
 .contact-page-hero,
 .dark-matrix {
   background-color: var(--emerald-deep);
-  background-image: linear-gradient(135deg, rgba(4,34,29,.94), rgba(7,57,48,.78)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(29,26,82,.94), rgba(41,38,100,.78)), none;
   background-position: center;
   background-size: cover;
 }
 .unfold-section::before { background: linear-gradient(90deg, transparent 19.8%, rgba(243,239,229,.12) 20%, transparent 20.2%, transparent 59.8%, rgba(243,239,229,.12) 60%, transparent 60.2%); }
 .unfold-copy .eyebrow, .scene-label, .professional-top .eyebrow, .professional-showcase p, .professional-groups span, .catalogue-columns h4, .pro-categories span, .pro-categories small, .responsibility span { color: #dbba90; }
 .unfold-copy > p:last-child, .professional-top > p:last-child, .professional-groups p, .catalogue-columns p, .pro-categories p, .matrix-list span, .dark-matrix > p, .contact-page-hero > p:last-child { color: #dbe2d7; }
-.box-front { background: linear-gradient(118deg, #0c5145, #09362f 65%, #173b31); }
+.box-front { background: linear-gradient(118deg, #292664, #1d1a52 65%, #292664); }
 .box-front::after { background: #d3a576; }
 .box-front span { color: #dfd7c8; }
-.box-side { background: #062a24; }
-.box-top { background: linear-gradient(138deg, #3d7968, #145348); }
+.box-side { background: #1d1a52; }
+.box-top { background: linear-gradient(138deg, #3c387d, #292664); }
 
 .range-intro-media,
 .home-route-professional,
@@ -132,14 +132,14 @@ footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; align-items: 
 
 .home-route-consumer {
   background-color: var(--emerald);
-  background-image: linear-gradient(135deg, rgba(10,70,60,.9), rgba(7,41,35,.8)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(41,38,100,.9), rgba(29,26,82,.8)), none;
   background-position: center;
   background-size: cover;
 }
 .home-routes { background: #ab927a; }
 .home-routes-mark { color: rgba(243,239,229,.10); }
 .home-standards, .credentials, .contact-page-details { background: #e7dfd2; }
-.range-watermark { color: rgba(23,60,52,.065); }
+.range-watermark { color: rgba(41,38,100,.065); }
 
 .product-card { background: #ece7dd; }
 .product-card.featured-card, .catalogue-card-featured { background: #d9e5da; }
@@ -162,8 +162,8 @@ footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; align-items: 
 :root {
   --paper: #ebe5d9;
   --paper-deep: #d9cebd;
-  --ink: #173c34;
-  --ink-soft: #4d6257;
+  --ink: #292664;
+  --ink-soft: #292664;
   --line: #beac96;
   --gold: #d3a576;
   --gold-soft: #e2c49a;
@@ -222,7 +222,7 @@ footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; align-items: 
 .inner-hero-standards {
   color: var(--paper);
   background-color: var(--emerald-deep);
-  background-image: linear-gradient(135deg, rgba(4,34,29,.94), rgba(7,57,48,.78)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(29,26,82,.94), rgba(41,38,100,.78)), none;
   background-position: center;
   background-size: cover;
 }
@@ -252,7 +252,7 @@ footer { display: grid; grid-template-columns: 1.2fr 1fr 1fr auto; align-items: 
 footer {
   color: var(--paper);
   background-color: var(--emerald-deep);
-  background-image: linear-gradient(135deg, rgba(4,34,29,.96), rgba(7,57,48,.84)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(29,26,82,.96), rgba(41,38,100,.84)), none;
   background-position: center;
   background-size: cover;
 }
@@ -263,7 +263,7 @@ footer small, footer .back-to-top { color: var(--gold-soft); }
 /* Explicitly keep every inner-page introduction on the same emerald treatment. */
 .inner-hero-professional {
   background-color: var(--emerald-deep);
-  background-image: linear-gradient(135deg, rgba(4,34,29,.94), rgba(7,57,48,.78)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(29,26,82,.94), rgba(41,38,100,.78)), none;
   background-position: center;
   background-size: cover;
 }
@@ -310,7 +310,7 @@ footer small, footer .back-to-top { color: var(--gold-soft); }
   bottom: 8%;
   left: 17%;
   border-radius: 50%;
-  background: rgba(23,60,52,.18);
+  background: rgba(41,38,100,.18);
   filter: blur(15px);
   content: "";
 }
@@ -321,11 +321,11 @@ footer small, footer .back-to-top { color: var(--gold-soft); }
   z-index: 2;
   inset: -6%;
   object-fit: contain;
-  filter: drop-shadow(0 18px 14px rgba(23,60,52,.18));
+  filter: drop-shadow(0 18px 14px rgba(41,38,100,.18));
   transition: transform .5s cubic-bezier(.2,.72,.25,1), filter .5s ease;
   will-change: transform;
 }
-.catalogue-family:hover .family-portrait-stage .family-portrait-image { transform: translateY(-10px) scale(1.018); filter: drop-shadow(0 26px 19px rgba(23,60,52,.24)); }
+.catalogue-family:hover .family-portrait-stage .family-portrait-image { transform: translateY(-10px) scale(1.018); filter: drop-shadow(0 26px 19px rgba(41,38,100,.24)); }
 .family-portrait-stage-transparent,
 #eloquence-ultra .family-portrait-stage-transparent,
 #shhh .family-portrait-stage-transparent,
@@ -606,7 +606,7 @@ footer {
   background-color: var(--brand-blue-deep);
   background-image:
     linear-gradient(135deg, rgba(20, 18, 67, .97), rgba(48, 44, 113, .84)),
-    url("assets/emerald-texture.png");
+    none;
   background-position: center;
   background-size: cover;
   background-blend-mode: normal, luminosity;
@@ -624,7 +624,7 @@ footer {
   background-color: var(--brand-blue);
   background-image:
     linear-gradient(135deg, rgba(41, 38, 100, .96), rgba(29, 26, 82, .84)),
-    url("assets/emerald-texture.png");
+    none;
   background-position: center;
   background-size: cover;
   background-blend-mode: normal, luminosity;
@@ -645,7 +645,7 @@ footer .brand-mark { color: var(--paper); }
   background-color: var(--brand-blue-deep);
   background-image:
     linear-gradient(135deg, rgba(20, 18, 67, .98), rgba(48, 44, 113, .9)),
-    url("assets/emerald-texture.png");
+    none;
   background-blend-mode: normal, luminosity;
 }
 
@@ -1041,8 +1041,8 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   justify-self: start;
   gap: clamp(18px, 2.5vw, 34px);
   padding: 13px 0;
-  border-top: 1px solid rgba(23,60,52,.24);
-  border-bottom: 1px solid rgba(23,60,52,.24);
+  border-top: 1px solid rgba(41,38,100,.24);
+  border-bottom: 1px solid rgba(41,38,100,.24);
 }
 .home-accreditation-marks figure { margin: 0; }
 .home-accreditation-marks img {
@@ -1104,7 +1104,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
     padding: 112px 8vw 54px;
     color: var(--paper);
     background-color: var(--emerald-deep);
-    background-image: linear-gradient(135deg, rgba(4,34,29,.97), rgba(7,57,48,.9)), url("assets/emerald-texture.png");
+    background-image: linear-gradient(135deg, rgba(29,26,82,.97), rgba(41,38,100,.9)), none;
     background-position: center;
     background-size: cover;
     clip-path: inset(0 0 100% 0);
@@ -1179,7 +1179,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 #eloquence-ultra:hover .family-portrait-image,
 #shhh:hover .family-portrait-image {
   transform: translateY(-8.1px) scale(1.0144);
-  filter: drop-shadow(0 20.7px 15.3px rgba(23,60,52,.21));
+  filter: drop-shadow(0 20.7px 15.3px rgba(41,38,100,.21));
 }
 #spa-elite .collage-single img {
   width: min(90.75%, 478.5px);
@@ -1193,7 +1193,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 }
 #spa-elite:hover .family-collage img {
   transform: translateY(-11px) rotate(1deg) scale(1.022);
-  filter: drop-shadow(0 26.4px 19.8px rgba(23,60,52,.26));
+  filter: drop-shadow(0 26.4px 19.8px rgba(41,38,100,.26));
 }
 
 /* Pro-Active Centrefeed: retain the original, product-specific source images. */
@@ -1202,14 +1202,14 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   height: 8%;
   bottom: 8%;
   left: 15%;
-  background: rgba(23,60,52,.18);
+  background: rgba(41,38,100,.18);
 }
 #pro-active .centrefeed-stage img {
   position: absolute;
   z-index: 2;
   max-width: none;
   object-fit: contain;
-  filter: drop-shadow(0 18px 14px rgba(23,60,52,.18));
+  filter: drop-shadow(0 18px 14px rgba(41,38,100,.18));
   transition: transform .5s cubic-bezier(.2,.72,.25,1), filter .5s ease;
   will-change: transform;
 }
@@ -1218,7 +1218,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 #pro-active .centrefeed-stage img:nth-child(3) { width: min(34%, 230px); height: 38%; right: 17%; bottom: 8%; }
 #pro-active:hover .centrefeed-stage img {
   transform: translateY(-9px) scale(1.018);
-  filter: drop-shadow(0 25px 18px rgba(23,60,52,.23));
+  filter: drop-shadow(0 25px 18px rgba(41,38,100,.23));
 }
 
 /* Catalogue section labels share the home page's compact, gold editorial marker. */
@@ -1276,7 +1276,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   background: radial-gradient(ellipse at 50% 72%, rgba(226,196,154,.36), transparent 58%);
   content: "";
 }
-.family-photo::after { width: 76%; bottom: 7%; left: 12%; background: rgba(23,60,52,.2); }
+.family-photo::after { width: 76%; bottom: 7%; left: 12%; background: rgba(41,38,100,.2); }
 .family-photo.collage-three img:nth-child(1) { width: min(53%, 350px); max-height: 84%; left: 5%; bottom: 8%; }
 .family-photo.collage-three img:nth-child(2) { width: min(43%, 288px); max-height: 70%; right: 18%; bottom: 8%; }
 .family-photo.collage-three img:nth-child(3) { width: min(29%, 190px); max-height: 45%; right: 4%; bottom: 10%; }
@@ -1296,11 +1296,11 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   bottom: 12%;
   border-radius: 50%;
   background: rgba(243,239,229,.74);
-  box-shadow: inset 0 0 0 1px rgba(23,60,52,.14);
+  box-shadow: inset 0 0 0 1px rgba(41,38,100,.14);
   content: "";
 }
 .workshop-pair img:nth-child(1) { width: min(53%, 340px); left: 8%; bottom: 9%; }
-.workshop-pair img:nth-child(2) { width: min(47%, 305px); right: 5%; bottom: 11%; filter: drop-shadow(0 18px 14px rgba(23,60,52,.25)); }
+.workshop-pair img:nth-child(2) { width: min(47%, 305px); right: 5%; bottom: 11%; filter: drop-shadow(0 18px 14px rgba(41,38,100,.25)); }
 .family-portrait-stage { background: #fff; }
 .family-portrait-stage::after { display: none; }
 .family-portrait-stage .family-portrait-image { width: 100%; height: 100%; position: absolute; inset: 0; object-fit: cover; filter: none; transition: none; }
@@ -1336,7 +1336,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  border: 1px solid rgba(23,60,52,.24);
+  border: 1px solid rgba(41,38,100,.24);
   color: var(--ink);
   font-size: 11px;
   font-weight: 700;
@@ -1352,7 +1352,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 .catalogue-brand-professional {
   color: var(--paper);
   background-color: var(--emerald-deep);
-  background-image: linear-gradient(135deg, rgba(4,34,29,.96), rgba(7,57,48,.82)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(29,26,82,.96), rgba(41,38,100,.82)), none;
   background-position: center;
   background-size: cover;
 }
@@ -1387,8 +1387,8 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 .catalogue-family-reverse .family-collage { order: 2; }
 .catalogue-family-reverse .family-copy { order: 1; }
 .family-collage { min-height: 500px; position: relative; overflow: hidden; background: #ddd5c7; }
-.family-collage::after { width: 61%; height: 8%; position: absolute; z-index: 1; bottom: 11%; left: 20%; border-radius: 50%; background: rgba(23,60,52,.14); filter: blur(17px); content: ""; }
-.family-collage img { position: absolute; z-index: 2; max-width: none; object-fit: contain; filter: drop-shadow(0 21px 16px rgba(23,60,52,.22)); transition: transform .55s cubic-bezier(.2,.72,.25,1); }
+.family-collage::after { width: 61%; height: 8%; position: absolute; z-index: 1; bottom: 11%; left: 20%; border-radius: 50%; background: rgba(41,38,100,.14); filter: blur(17px); content: ""; }
+.family-collage img { position: absolute; z-index: 2; max-width: none; object-fit: contain; filter: drop-shadow(0 21px 16px rgba(41,38,100,.22)); transition: transform .55s cubic-bezier(.2,.72,.25,1); }
 .catalogue-family:hover .family-collage img { transform: translateY(-9px) rotate(1deg); }
 .collage-four img:nth-child(1) { width: min(57%, 350px); max-height: 81%; left: 8%; bottom: 12%; }
 .collage-four img:nth-child(2) { width: min(43%, 285px); max-height: 61%; right: 7%; bottom: 12%; }
@@ -1408,14 +1408,14 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 .oak-collage { background: #d8ddd2; }
 .professional-collage { background: #d8d0c0; }
 .catalogue-brand-professional .family-collage { background: #d8d0c0; }
-.catalogue-brand-professional .family-collage::after { background: rgba(23,60,52,.18); }
+.catalogue-brand-professional .family-collage::after { background: rgba(41,38,100,.18); }
 .family-copy { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; padding: clamp(42px, 5.3vw, 82px); color: var(--ink); }
 .family-kicker { margin: 0 0 21px; color: var(--gold-deep); font-size: 10px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .family-copy h3 { margin: 0; font-size: clamp(45px, 5vw, 76px); font-weight: 500; line-height: .86; letter-spacing: -.078em; }
 .family-copy h3 em { font-family: var(--serif); font-weight: 400; }
 .family-description { max-width: 380px; margin: 24px 0 26px; color: var(--ink-soft); font-size: 14px; line-height: 1.6; }
-.family-options { width: 100%; margin: 0; border-top: 1px solid rgba(23,60,52,.22); }
-.family-options div { display: grid; grid-template-columns: minmax(105px, .52fr) minmax(0, 1fr); gap: 15px; padding: 11px 0; border-bottom: 1px solid rgba(23,60,52,.16); }
+.family-options { width: 100%; margin: 0; border-top: 1px solid rgba(41,38,100,.22); }
+.family-options div { display: grid; grid-template-columns: minmax(105px, .52fr) minmax(0, 1fr); gap: 15px; padding: 11px 0; border-bottom: 1px solid rgba(41,38,100,.16); }
 .family-options dt { font-size: 12px; font-weight: 700; }
 .family-options dd { margin: 0; color: var(--ink-soft); font-size: 12px; line-height: 1.45; }
 .catalogue-family-compact { min-height: 370px; grid-template-columns: minmax(0, .75fr) minmax(300px, 1.25fr); }
@@ -1561,7 +1561,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 .pillar-section {
   color: var(--paper);
   background-color: var(--emerald-deep);
-  background-image: linear-gradient(135deg, rgba(4,34,29,.95), rgba(7,57,48,.82)), url("assets/emerald-texture.png");
+  background-image: linear-gradient(135deg, rgba(29,26,82,.95), rgba(41,38,100,.82)), none;
   background-position: center;
   background-size: cover;
 }
@@ -1639,10 +1639,10 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 .professional-product-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 255px), 1fr)); gap: 1px; background: #c9b9a5; }
 .professional-product-card { min-width: 0; display: flex; flex-direction: column; background: #f3efe5; }
 .professional-product-media { min-height: clamp(240px, 24vw, 340px); position: relative; display: grid; place-items: center; padding: clamp(22px, 3vw, 44px); overflow: hidden; background: transparent; }
-.professional-product-media::after { width: 60%; height: 8%; position: absolute; z-index: 0; bottom: 10%; left: 20%; border-radius: 50%; background: rgba(23,60,52,.15); filter: blur(13px); content: ""; }
-.professional-product-media img { width: min(100%, 310px); height: min(100%, 285px); position: relative; z-index: 1; object-fit: contain; filter: drop-shadow(0 16px 12px rgba(23,60,52,.19)); transition: transform .45s ease; }
+.professional-product-media::after { width: 60%; height: 8%; position: absolute; z-index: 0; bottom: 10%; left: 20%; border-radius: 50%; background: rgba(41,38,100,.15); filter: blur(13px); content: ""; }
+.professional-product-media img { width: min(100%, 310px); height: min(100%, 285px); position: relative; z-index: 1; object-fit: contain; filter: drop-shadow(0 16px 12px rgba(41,38,100,.19)); transition: transform .45s ease; }
 .professional-product-card:hover .professional-product-media img { transform: translateY(-7px) scale(1.025); }
-.professional-product-card > div:last-child { min-height: 196px; padding: 25px 25px 29px; border-top: 1px solid rgba(23,60,52,.14); }
+.professional-product-card > div:last-child { min-height: 196px; padding: 25px 25px 29px; border-top: 1px solid rgba(41,38,100,.14); }
 .professional-product-card span { display: block; margin-bottom: 18px; color: var(--gold-deep); font-size: 10px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
 .professional-product-card h3 { margin: 0; font-size: clamp(31px, 3vw, 44px); font-weight: 500; line-height: .9; letter-spacing: -.065em; }
 .professional-product-card h3 em { display: block; font-family: var(--serif); font-weight: 400; }
@@ -1723,7 +1723,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   bottom: 8%;
   left: 17%;
   border-radius: 50%;
-  background: rgba(23,60,52,.18);
+  background: rgba(41,38,100,.18);
   filter: blur(15px);
   content: "";
 }
@@ -1734,11 +1734,11 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   z-index: 2;
   inset: -6%;
   object-fit: contain;
-  filter: drop-shadow(0 18px 14px rgba(23,60,52,.18));
+  filter: drop-shadow(0 18px 14px rgba(41,38,100,.18));
   transition: transform .5s cubic-bezier(.2,.72,.25,1), filter .5s ease;
   will-change: transform;
 }
-.catalogue-family:hover .family-portrait-stage .family-portrait-image { transform: translateY(-10px) scale(1.018); filter: drop-shadow(0 26px 19px rgba(23,60,52,.24)); }
+.catalogue-family:hover .family-portrait-stage .family-portrait-image { transform: translateY(-10px) scale(1.018); filter: drop-shadow(0 26px 19px rgba(41,38,100,.24)); }
 .family-portrait-stage-transparent,
 #eloquence-ultra .family-portrait-stage-transparent,
 #shhh .family-portrait-stage-transparent,
@@ -2161,5 +2161,49 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
     max-height: none;
     margin: 16px 0 0 50px;
     line-height: 1.58;
+  }
+}
+
+/* Final palette hardening: the public interface uses only EuroPapers blue and white. */
+:root {
+  --ep-blue: #292664;
+  --ep-white: #ffffff;
+  --emerald: var(--ep-blue);
+  --emerald-deep: #1d1a52;
+  --aqua: var(--ep-blue);
+  --aqua-deep: var(--ep-blue);
+  --gold: var(--ep-white);
+  --gold-soft: var(--ep-white);
+  --gold-deep: var(--ep-blue);
+}
+
+.site-header:not(.is-scrolled):not(.is-menu-open) nav a,
+.site-header:not(.is-scrolled):not(.is-menu-open) nav a:visited,
+.site-header:not(.is-scrolled):not(.is-menu-open) nav a:hover,
+.site-header:not(.is-scrolled):not(.is-menu-open) nav a:active,
+.site-header:not(.is-scrolled):not(.is-menu-open) nav a:focus {
+  color: var(--ep-white) !important;
+}
+.site-header.is-scrolled nav a,
+.site-header.is-scrolled nav a:visited,
+.site-header.is-scrolled nav a:hover,
+.site-header.is-scrolled nav a:active,
+.site-header.is-scrolled nav a:focus {
+  color: var(--ep-blue) !important;
+}
+.site-header.is-menu-open nav,
+.site-header.is-menu-open nav a,
+.site-header.is-menu-open nav a:visited,
+.site-header.is-menu-open nav a:hover,
+.site-header.is-menu-open nav a:active,
+.site-header.is-menu-open nav a:focus {
+  color: var(--ep-white) !important;
+  background-image: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 660px) {
+  .about-page .contact-profile {
+    padding-bottom: clamp(72px, 18vw, 96px);
   }
 }
