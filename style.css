@@ -2096,3 +2096,70 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   .professional-page .professional-product-card > .professional-product-media { min-height: 295px; height: 295px; }
   .professional-page .professional-product-card > div:last-child { min-height: 275px; padding: 29px 8vw 34px; }
 }
+
+/* Mobile consistency pass: navigation, catalogue stages and the About EP pillar rhythm. */
+@media (max-width: 900px) {
+  .site-header.is-menu-open nav {
+    justify-content: flex-start;
+    gap: clamp(18px, 3.4vh, 28px);
+    padding: calc(102px + env(safe-area-inset-top)) 8vw calc(36px + env(safe-area-inset-bottom));
+    color: var(--ep-white) !important;
+    background-color: var(--ep-blue) !important;
+    background-image: none !important;
+    background-blend-mode: normal !important;
+  }
+  .site-header.is-menu-open nav a,
+  .site-header.is-menu-open nav a[aria-current="page"],
+  .site-header.is-menu-open nav a:active,
+  .site-header.is-menu-open nav a:focus {
+    color: var(--ep-white) !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .site-header.is-menu-open nav a[aria-current="page"] {
+    text-decoration-color: var(--ep-white);
+  }
+  .site-header.is-menu-open nav a:focus-visible,
+  .site-header.is-menu-open .menu-toggle:focus-visible {
+    outline-color: var(--ep-white);
+  }
+}
+
+@media (max-width: 660px) {
+  /* The final desktop grid rule previously collapsed the image column to 2px. */
+  .product-catalogue .catalogue-family,
+  .product-catalogue .catalogue-family-compact {
+    grid-template-columns: minmax(0, 1fr);
+    height: auto;
+  }
+  .product-catalogue .family-collage,
+  .product-catalogue .catalogue-family-compact .family-collage {
+    width: 100%;
+    min-height: 350px;
+    height: 350px;
+  }
+  .product-catalogue .family-portrait-stage .family-portrait-image {
+    width: 122%;
+    height: 122%;
+    inset: -11%;
+  }
+
+  .about-page .pillar-section {
+    padding: 62px 8vw 88px;
+    scroll-margin-top: 78px;
+  }
+  .about-page .pillar-list {
+    margin-top: 34px;
+  }
+  .about-page .pillar-item {
+    padding: 28px 0;
+  }
+  .about-page .pillar-item h4 {
+    font-size: clamp(26px, 8.2vw, 34px);
+    line-height: 1;
+  }
+  .about-page .pillar-item p {
+    max-height: none;
+    margin: 16px 0 0 50px;
+    line-height: 1.58;
+  }
+}
