@@ -2388,3 +2388,81 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
     font-size: 8px;
   }
 }
+
+/* Final home and consumer editorial adjustments. */
+.product-catalogue .catalogue-brand-heading-merged {
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, .8fr);
+  gap: clamp(42px, 8vw, 120px);
+  align-items: end;
+}
+.product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-title {
+  display: block;
+  white-space: normal;
+}
+.product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-title > p {
+  margin: 0;
+}
+.product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-title h2 {
+  margin: 22px 0 0;
+  font-size: clamp(54px, 6.7vw, 108px);
+  line-height: .89;
+  letter-spacing: -.075em;
+}
+.product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-support {
+  max-width: 310px;
+  margin: 0 0 8px;
+  justify-self: start;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+/* Keep the consumer range statement in the same editorial rhythm as the home statement. */
+@media (max-width: 900px) {
+  .product-catalogue .catalogue-brand-heading-merged {
+    grid-template-columns: minmax(0, 1.25fr) minmax(190px, .75fr);
+    gap: clamp(28px, 5vw, 48px);
+    margin-bottom: clamp(52px, 8vw, 72px);
+  }
+  .product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-title h2 {
+    font-size: clamp(48px, 6.7vw, 60px);
+  }
+  .product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-support {
+    max-width: 250px;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+}
+
+.home-page .scene-product-image {
+  width: min(92.5%, 525px);
+  height: 86%;
+  top: 40%;
+  transform: translate(-50%, -50%) rotate(-7deg) scale(.92);
+}
+.home-page .product-scene:hover .scene-product-image {
+  transform: translate(-50%, calc(-50% - 12px)) rotate(-5deg) scale(.95);
+}
+
+@media (max-width: 660px) {
+  .product-catalogue .catalogue-brand-heading-merged {
+    display: block;
+    margin-bottom: 49px;
+  }
+  .product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-title h2 {
+    font-size: clamp(54px, 14.5vw, 75px);
+  }
+  .product-catalogue .catalogue-brand-heading-merged > .catalogue-brand-support {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
+  .home-page .scene-product-image {
+    width: min(95%, 375px);
+    height: 84%;
+    top: 38%;
+    transform: translate(-50%, -50%) rotate(-7deg) scale(.86);
+  }
+  .home-page .product-scene:hover .scene-product-image {
+    transform: translate(-50%, calc(-50% - 8px)) rotate(-5deg) scale(.89);
+  }
+}
