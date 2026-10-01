@@ -1786,6 +1786,18 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   }
 }
 
+/* Keep the RANGE watermark present above the route-card fields without covering their copy. */
+.home-page .home-routes-mark {
+  z-index: 3;
+  opacity: .16 !important;
+  transition: none !important;
+  animation: none !important;
+}
+.home-page .home-route > * {
+  position: relative;
+  z-index: 4;
+}
+
 /* Accreditation information is intentionally separate from About EP and uses the same navy-and-white system. */
 .home-about-preview {
   grid-template-columns: minmax(0, 1.1fr) minmax(220px, .75fr);
@@ -2205,5 +2217,174 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
 @media (max-width: 660px) {
   .about-page .contact-profile {
     padding-bottom: clamp(72px, 18vw, 96px);
+  }
+}
+
+/* Editorial labels are intentionally prominent: they introduce each section before its display heading. */
+.eyebrow,
+.section-index,
+.family-kicker,
+.catalogue-card span,
+.professional-product-card span,
+.professional-groups span,
+.pro-categories span,
+.responsibility span,
+.accreditation-lockups figcaption,
+.standards-marks figcaption,
+.credential-marks figcaption {
+  font-size: clamp(12px, .95vw, 14px) !important;
+  letter-spacing: .12em;
+}
+
+@media (max-width: 660px) {
+  .eyebrow,
+  .section-index,
+  .family-kicker,
+  .catalogue-card span,
+  .professional-product-card span,
+  .professional-groups span,
+  .pro-categories span,
+  .responsibility span,
+  .accreditation-lockups figcaption,
+  .standards-marks figcaption,
+  .credential-marks figcaption {
+    font-size: 12px !important;
+  }
+}
+
+/* Home feature panel: a fixed composition, not a scroll-driven animation. */
+.home-page .unfold-section {
+  height: auto;
+  min-height: 0;
+  overflow: hidden;
+}
+.home-page .unfold-section::before { display: none; }
+.home-page .unfold-sticky {
+  min-height: clamp(420px, 45vw, 610px);
+  height: auto;
+  position: relative;
+  top: auto;
+  grid-template-columns: minmax(0, .9fr) minmax(300px, 1.1fr);
+  padding: clamp(72px, 8vw, 122px) 9vw;
+}
+.home-page .unfold-copy h2 { margin-top: 0; }
+.home-page .product-scene {
+  min-height: 0;
+  height: clamp(300px, 34vw, 460px);
+  perspective: none;
+}
+.home-page .scene-product-image {
+  transform: translate(-50%, -50%) scale(.92);
+  will-change: auto;
+}
+.home-page .product-scene .scene-shadow { opacity: .2; }
+
+/* Removing the route labels also lets the two solution cards become more concise. */
+.home-page .home-route {
+  min-height: clamp(400px, 47vw, 520px);
+  padding: clamp(34px, 4.5vw, 56px) 8vw;
+}
+.home-page .statement {
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, .8fr);
+  gap: clamp(42px, 8vw, 120px);
+}
+
+@media (max-width: 660px) {
+  .home-page .unfold-sticky {
+    min-height: 0;
+    display: block;
+    padding: 72px 8vw 64px;
+  }
+  .home-page .product-scene {
+    height: 300px;
+    margin-top: 26px;
+  }
+  .home-page .scene-product-image { transform: translate(-50%, -50%) scale(.86); }
+  .home-page .home-route {
+    min-height: 400px;
+    padding: 32px 8vw;
+  }
+  .home-page .statement {
+    display: block;
+    padding: 92px 8vw;
+  }
+}
+
+/* Consumer technical detail mirrors the balanced Talk to the team call-to-action. */
+.catalogue-matrix {
+  grid-template-columns: 1fr .65fr auto;
+}
+.catalogue-matrix-actions {
+  align-self: end;
+  justify-self: start;
+}
+
+/* Home routes: only their explicit calls to action are interactive. */
+.home-page .home-route { cursor: default; }
+.home-page .home-route-link {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  gap: 8px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.home-page .home-route-link i {
+  margin-left: 8px;
+  font-size: 14px;
+  font-style: normal;
+  transition: transform .25s ease;
+}
+.home-page .home-route-link:hover i,
+.home-page .home-route-link:focus-visible i { transform: translate(2px, -2px); }
+.home-page .home-route-link:focus-visible {
+  outline: 2px solid var(--ep-white);
+  outline-offset: 6px;
+}
+
+/* Static home feature: keep the product descriptor clear of the pack artwork. */
+.home-page .scene-product-image {
+  width: min(74%, 420px);
+  height: 72%;
+  top: 42%;
+  transform: translate(-50%, -50%) scale(.92);
+  transition: transform .5s cubic-bezier(.2, .72, .25, 1), filter .5s ease;
+}
+.home-page .product-scene .scene-label {
+  right: 50%;
+  bottom: 2%;
+  width: 100%;
+  margin: 0;
+  transform: translateX(50%);
+  text-align: center;
+  white-space: normal;
+}
+.home-page .product-scene:hover .scene-product-image {
+  transform: translate(-50%, calc(-50% - 12px)) rotate(-1deg) scale(.95);
+}
+.home-page .product-scene:hover .scene-shadow {
+  opacity: .28;
+  transform: scaleX(1.06);
+}
+
+@media (max-width: 660px) {
+  .home-page .scene-product-image {
+    width: min(76%, 300px);
+    height: 70%;
+    top: 40%;
+    transform: translate(-50%, -50%) scale(.86);
+  }
+  .home-page .product-scene:hover .scene-product-image {
+    transform: translate(-50%, calc(-50% - 8px)) rotate(-1deg) scale(.89);
+  }
+  .home-page .product-scene .scene-label {
+    bottom: 0;
+    font-size: 8px;
   }
 }

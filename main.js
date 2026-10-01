@@ -1,5 +1,3 @@
-const scene = document.querySelector('#product-scene');
-const unfolding = document.querySelector('.unfold-section');
 const header = document.querySelector('[data-header]');
 const menuToggle = document.querySelector('[data-menu-toggle]');
 const siteNavigation = document.querySelector('#site-navigation');
@@ -40,11 +38,6 @@ window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
 function updateScrollScene() {
   header?.classList.toggle('is-scrolled', window.scrollY > 28);
   updatePillarStage();
-  if (!scene || !unfolding) return;
-  const start = unfolding.offsetTop;
-  const distance = unfolding.offsetHeight - window.innerHeight;
-  const progress = clamp((window.scrollY - start) / distance);
-  scene.style.setProperty('--progress', progress.toFixed(3));
 }
 
 function updatePillarStage() {
