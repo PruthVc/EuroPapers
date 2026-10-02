@@ -2466,3 +2466,205 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
     transform: translate(-50%, calc(-50% - 8px)) rotate(-5deg) scale(.89);
   }
 }
+
+/* Home transformation: parent roll → tissue roll → Eloquence Ultra Soft pack. */
+.home-page .pack-transformation {
+  height: clamp(320px, 35vw, 480px);
+  min-height: 0;
+  overflow: visible;
+}
+.pack-stage {
+  position: absolute;
+  inset: 0 0 42px;
+  isolation: isolate;
+}
+.pack-stage::after {
+  width: 62%;
+  height: 8%;
+  position: absolute;
+  z-index: -1;
+  bottom: 5%;
+  left: 19%;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .34);
+  filter: blur(18px);
+  content: "";
+}
+.parent-roll,
+.single-tissue-roll,
+.pack-scene-product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: center;
+}
+.parent-roll {
+  width: min(74%, 330px);
+  aspect-ratio: 1;
+  z-index: 2;
+  border: clamp(10px, 1.3vw, 18px) solid var(--ep-white);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--ep-blue) 0 13%, var(--ep-white) 13.5% 32%, var(--ep-blue) 32.5% 34%, var(--ep-white) 34.5% 64%, var(--ep-blue) 64.5% 66%, var(--ep-white) 66.5% 100%);
+  box-shadow: inset 0 0 0 1px rgba(41, 38, 100, .22), 0 25px 30px rgba(0, 0, 0, .18);
+  transform: translate(-50%, -50%) rotate(-10deg);
+}
+.parent-roll::before,
+.parent-roll::after {
+  position: absolute;
+  border: 1px solid rgba(41, 38, 100, .32);
+  border-radius: 50%;
+  content: "";
+}
+.parent-roll::before { inset: 20%; }
+.parent-roll::after { inset: 36%; }
+.parent-roll-core {
+  width: 16%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  border-radius: 50%;
+  background: var(--ep-blue);
+  box-shadow: 0 0 0 clamp(5px, .65vw, 9px) var(--ep-white);
+}
+.single-tissue-roll {
+  width: min(43%, 205px);
+  aspect-ratio: 1;
+  z-index: 3;
+  border: clamp(7px, .9vw, 12px) solid var(--ep-white);
+  border-radius: 50%;
+  background: radial-gradient(circle at center, var(--ep-blue) 0 14%, var(--ep-white) 14.5% 47%, var(--ep-blue) 47.5% 49%, var(--ep-white) 49.5% 100%);
+  box-shadow: inset 0 0 0 1px rgba(41, 38, 100, .24), 0 20px 23px rgba(0, 0, 0, .18);
+  transform: translate(-50%, -50%) scale(.16);
+}
+.single-tissue-roll::before,
+.single-tissue-roll::after {
+  position: absolute;
+  inset: 25%;
+  border: 1px solid rgba(41, 38, 100, .34);
+  border-radius: 50%;
+  content: "";
+}
+.single-tissue-roll::after { inset: 39%; }
+.single-tissue-roll span {
+  width: 15%;
+  aspect-ratio: 1;
+  position: absolute;
+  top: 42.5%;
+  left: 42.5%;
+  border-radius: 50%;
+  background: var(--ep-blue);
+}
+.pack-scene-product {
+  width: min(96%, 555px);
+  height: 100%;
+  z-index: 5;
+  object-fit: contain;
+  opacity: 1;
+  filter: drop-shadow(0 23px 18px rgba(0, 0, 0, .2));
+  transform: translate(-50%, -50%) rotate(-7deg) scale(.96);
+}
+.home-page .pack-transformation .scene-label {
+  right: 50%;
+  bottom: 0;
+  width: 100%;
+  margin: 0;
+  color: var(--ep-white) !important;
+  transform: translateX(50%);
+  text-align: center;
+}
+@media (max-width: 660px) {
+  .home-page .pack-transformation { height: 330px; }
+  .pack-stage { inset-bottom: 35px; }
+  .parent-roll { width: min(74%, 270px); }
+  .pack-scene-product { width: min(99%, 360px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .parent-roll,
+  .single-tissue-roll { display: none; }
+  .pack-scene-product,
+  .home-page .pack-transformation .scene-label { opacity: 1 !important; animation: none !important; }
+}
+
+/* Scroll-scrubbed home transformation: parent roll → tissue roll → retail pack.
+   No CSS transition runs this sequence: its state maps directly to scroll position,
+   so upward scrolling traces the same movement in reverse. */
+.home-page .unfold-section[data-pack-transform] {
+  height: 270vh;
+  min-height: 0;
+  overflow: clip;
+  background: var(--ep-blue);
+}
+.home-page .unfold-section[data-pack-transform] .unfold-sticky {
+  min-height: 0;
+  height: 100svh;
+  position: sticky;
+  top: 0;
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(320px, 1.1fr);
+  align-items: center;
+  padding: 9vh 9vw;
+}
+.home-page .unfold-section[data-pack-transform] .pack-transformation {
+  height: min(62vw, 580px);
+  min-height: 340px;
+  margin: 0;
+}
+.pack-transformation.is-scroll-driven {
+  --parent-scale: 1;
+  --parent-y: 0;
+  --parent-rotation: -8;
+  --parent-opacity: 1;
+  --tissue-scale: .1;
+  --tissue-y: 0;
+  --tissue-rotation: -8;
+  --tissue-opacity: 0;
+  --package-scale: .1;
+  --package-y: -65;
+  --package-rotation: 90;
+  --package-opacity: 0;
+}
+.pack-transformation.is-scroll-driven .parent-roll,
+.pack-transformation.is-scroll-driven .single-tissue-roll,
+.pack-transformation.is-scroll-driven .pack-scene-product,
+.pack-transformation.is-scroll-driven .scene-label {
+  animation: none !important;
+  transition: none !important;
+}
+.pack-transformation.is-scroll-driven .parent-roll {
+  opacity: var(--parent-opacity);
+  box-shadow: inset 0 0 0 1px rgba(41, 38, 100, .22), 0 25px 30px rgba(41, 38, 100, .2);
+  transform: translate(-50%, calc(-50% + var(--parent-y) * 1px)) rotate(calc(var(--parent-rotation) * 1deg)) scale(var(--parent-scale));
+  will-change: transform, opacity;
+}
+.pack-transformation.is-scroll-driven .single-tissue-roll {
+  opacity: var(--tissue-opacity);
+  box-shadow: inset 0 0 0 1px rgba(41, 38, 100, .24), 0 16px 22px rgba(41, 38, 100, .18);
+  transform: translate(-50%, calc(-50% + var(--tissue-y) * 1px)) rotate(calc(var(--tissue-rotation) * 1deg)) scale(var(--tissue-scale));
+  will-change: transform, opacity;
+}
+.pack-transformation.is-scroll-driven .pack-scene-product {
+  opacity: var(--package-opacity);
+  filter: drop-shadow(0 23px 18px rgba(41, 38, 100, .22));
+  transform: translate(-50%, calc(-50% + var(--package-y) * 1px)) rotate(calc(var(--package-rotation) * 1deg)) scale(var(--package-scale));
+  will-change: transform, opacity;
+}
+.pack-transformation.is-scroll-driven .scene-label {
+  opacity: var(--package-opacity);
+  transform: translate(50%, calc((1 - var(--package-opacity)) * 12px));
+  will-change: transform, opacity;
+}
+
+@media (max-width: 660px) {
+  .home-page .unfold-section[data-pack-transform] { height: 250vh; }
+  .home-page .unfold-section[data-pack-transform] .unfold-sticky {
+    display: block;
+    height: 100svh;
+    padding: 68px 8vw 42px;
+  }
+  .home-page .unfold-section[data-pack-transform] .pack-transformation {
+    height: clamp(285px, 45vh, 360px);
+    min-height: 0;
+    margin-top: 20px;
+  }
+}

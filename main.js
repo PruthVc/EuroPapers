@@ -4,6 +4,12 @@ const siteNavigation = document.querySelector('#site-navigation');
 const pillarStage = document.querySelector('[data-pillar-stage]');
 const scrollPillars = [...document.querySelectorAll('[data-scroll-pillar]')];
 const pillarSources = [...document.querySelectorAll('[data-pillar-source]')];
+const packTransformation = document.querySelector('[data-pack-transform]');
+const packScene = packTransformation?.querySelector('.pack-transformation');
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+let packScrollProgress = 0;
+let packTargetProgress = 0;
+let packAnimationFrame = 0;
 
 const clamp = (value, min = 0, max = 1) => Math.min(Math.max(value, min), max);
 
@@ -38,6 +44,55 @@ window.matchMedia('(min-width: 901px)').addEventListener('change', (event) => {
 function updateScrollScene() {
   header?.classList.toggle('is-scrolled', window.scrollY > 28);
   updatePillarStage();
+  updatePackTransformation();
+}
+
+function progressBetween(value, start, end) {
+  return clamp((value - start) / (end - start));
+}
+
+function smoothStep(value) {
+  const clamped = clamp(value);
+  return clamped * clamped * (3 - 2 * clamped);
+}
+
+function renderPackTransformation() {
+  packAnimationFrame = 0;
+  // This scene is scrubbed by the document scroll position. Keeping the value
+  // direct (rather than playing a timed sequence) makes every point reversible.
+  packScrollProgress = packTargetProgress;
+
+  const progress = packScrollProgress;
+  const fold = smoothStep(progressBetween(progress, .08, .49));
+  const parentFade = smoothStep(progressBetween(progress, .38, .53));
+  const tissueIn = smoothStep(progressBetween(progress, .30, .49));
+  const tissueOut = smoothStep(progressBetween(progress, .71, .87));
+  const tissueTravel = smoothStep(progressBetween(progress, .53, .78));
+  const packageIn = smoothStep(progressBetween(progress, .70, .98));
+
+  packScene.style.setProperty('--parent-scale', (1 - (.9 * fold)).toFixed(4));
+  packScene.style.setProperty('--parent-y', (-38 * fold).toFixed(2));
+  packScene.style.setProperty('--parent-rotation', (-8 - 10 * fold).toFixed(2));
+  packScene.style.setProperty('--parent-opacity', (1 - parentFade).toFixed(4));
+  packScene.style.setProperty('--tissue-scale', (.1 + .05 * tissueIn).toFixed(4));
+  packScene.style.setProperty('--tissue-y', (-65 * tissueTravel).toFixed(2));
+  packScene.style.setProperty('--tissue-rotation', (-8 + 98 * tissueTravel).toFixed(2));
+  packScene.style.setProperty('--tissue-opacity', (tissueIn * (1 - tissueOut)).toFixed(4));
+  packScene.style.setProperty('--package-scale', (.1 + .86 * packageIn).toFixed(4));
+  packScene.style.setProperty('--package-y', (-65 + 65 * packageIn).toFixed(2));
+  packScene.style.setProperty('--package-rotation', (90 - 97 * packageIn).toFixed(2));
+  packScene.style.setProperty('--package-opacity', packageIn.toFixed(4));
+}
+
+function updatePackTransformation() {
+  if (!packTransformation || !packScene || prefersReducedMotion.matches) return;
+
+  const scrollDistance = packTransformation.offsetHeight - window.innerHeight;
+  packTargetProgress = scrollDistance > 0
+    ? clamp((window.scrollY - packTransformation.offsetTop) / scrollDistance)
+    : 1;
+
+  if (!packAnimationFrame) packAnimationFrame = requestAnimationFrame(renderPackTransformation);
 }
 
 function updatePillarStage() {
@@ -101,3 +156,9 @@ if ('IntersectionObserver' in window) {
 }
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+if (packScene && !prefersReducedMotion.matches) {
+  document.documentElement.classList.add('js');
+  packScene.classList.add('is-scroll-driven');
+  updatePackTransformation();
+}
