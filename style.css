@@ -2466,3 +2466,166 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
     transform: translate(-50%, calc(-50% - 8px)) rotate(-5deg) scale(.89);
   }
 }
+
+/* Professional product cards: image and caption stay together; the divider ends the product. */
+.professional-page .professional-product-card {
+  border-bottom: 1px solid var(--ep-blue);
+}
+.professional-page .professional-product-card:last-child {
+  border-bottom: 0;
+}
+.professional-page .professional-product-card > div:last-child {
+  border-top: 0;
+}
+.professional-page .professional-product-card > .professional-product-media {
+  border-bottom: 0;
+}
+.professional-page .professional-spec-list {
+  margin-top: 18px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Keep the AFH photography complete inside its stage while preserving the hover lift. */
+.professional-page .professional-product-card:not(#shhh):not(#oakleigh-professional) > .professional-product-media {
+  padding: clamp(24px, 2.2vw, 30px);
+  overflow: hidden;
+}
+.professional-page :is(#pro-active, #pro-active-workshop, #pro-tis-u, #pro-tis-u-mini, #pro-tis-u-jumbo, #pro-tis-u-micro, #pro-tis-u-sheet, #hy-pro, #pro-dri) .professional-product-media img {
+  width: auto;
+  height: auto;
+  max-width: 86%;
+  max-height: 82%;
+  object-fit: contain;
+}
+.professional-page .professional-product-card:not(#shhh):not(#oakleigh-professional):not(#pro-active):hover .professional-product-media img {
+  transform: translateY(-5px) scale(1.015);
+}
+
+@media (max-width: 660px) {
+  .professional-page .professional-product-card:not(#shhh):not(#oakleigh-professional) > .professional-product-media {
+    padding: clamp(20px, 6vw, 24px);
+  }
+  .professional-page :is(#pro-active, #pro-active-workshop, #pro-tis-u, #pro-tis-u-mini, #pro-tis-u-jumbo, #pro-tis-u-micro, #pro-tis-u-sheet, #hy-pro, #pro-dri) .professional-product-media img {
+    max-width: 88%;
+    max-height: 84%;
+  }
+}
+
+/* Product-specific stages: use the supplied cut-outs so the professional range sits on a shared ground line. */
+.professional-page .professional-product-stage {
+  padding: 0 !important;
+  overflow: hidden !important;
+  isolation: isolate;
+}
+.professional-page .professional-product-stage::after {
+  width: 72%;
+  height: 7%;
+  bottom: 8%;
+  left: 14%;
+  z-index: 0;
+  background: rgba(41,38,100,.16);
+}
+.professional-page :is(#pro-tis-u-sheet, #hy-pro) .professional-product-stage .stage-product {
+  position: absolute;
+  z-index: 1;
+  width: auto;
+  height: auto;
+  max-width: none;
+  max-height: none;
+  object-fit: contain;
+  transform-origin: center bottom;
+  filter: drop-shadow(0 16px 12px rgba(41,38,100,.18));
+  transition: transform .45s ease, filter .45s ease;
+}
+.professional-page #pro-tis-u-sheet .sheet-stage .stage-sheet-rolls {
+  width: 66.6%;
+  left: 16.7%;
+  bottom: 7%;
+}
+.professional-page #hy-pro .hygiene-stage .stage-hygiene-blue {
+  width: 42%;
+  left: 11%;
+  bottom: 10%;
+}
+.professional-page #hy-pro .hygiene-stage .stage-hygiene-white {
+  width: 46%;
+  right: 8%;
+  bottom: 4%;
+}
+.professional-page .professional-product-card:hover .professional-product-stage .stage-product {
+  transform: translateY(-5px) scale(1.015);
+  filter: drop-shadow(0 21px 15px rgba(41,38,100,.22));
+}
+
+/* Retain the approved product imagery, with enough breathing room for the micro tissue group. */
+.professional-page #pro-tis-u-micro > .professional-product-media {
+  padding: clamp(20px, 2.4vw, 28px) clamp(22px, 2.2vw, 26px) clamp(18px, 1.8vw, 20px);
+  overflow: hidden;
+}
+.professional-page #pro-tis-u-micro .professional-product-media img {
+  max-width: 82%;
+  max-height: 72%;
+  object-position: center bottom;
+}
+
+/* Container-relative media limits keep the approved washroom cut-outs within their captions. */
+.professional-page :is(#pro-tis-u, #pro-tis-u-mini, #pro-tis-u-jumbo) .professional-product-media img {
+  max-width: 76%;
+  max-height: 72%;
+}
+.professional-page #pro-tis-u .professional-product-media img {
+  width: min(70%, clamp(190px, 18vw, 230px));
+  height: auto;
+  max-width: none;
+  max-height: none;
+}
+
+/* The supplied centrefeed composition has generous transparent edges; scale its visible products to the shared stage. */
+.professional-page #pro-active .professional-product-media img {
+  transform: scale(2.2);
+}
+.professional-page #pro-active:hover .professional-product-media img {
+  transform: translateY(-5px) scale(2.233);
+}
+
+@media (max-width: 660px) {
+  .professional-page #pro-tis-u-micro .professional-product-media img {
+    max-width: 86%;
+    max-height: 74%;
+  }
+}
+
+/* The Professional gallery scales with its available space rather than fixed card stages. */
+.professional-page .professional-product-card {
+  min-height: clamp(540px, 43vw, 620px);
+}
+.professional-page .professional-product-card > .professional-product-media {
+  min-height: clamp(260px, 24vw, 305px);
+  height: clamp(260px, 24vw, 305px);
+  padding: clamp(22px, 2.4vw, 30px);
+}
+
+@media (max-width: 660px) {
+  .professional-page .professional-product-card {
+    min-height: 0;
+  }
+  .professional-page .professional-product-card > .professional-product-media {
+    min-height: clamp(250px, 68vw, 310px);
+    height: clamp(250px, 68vw, 310px);
+    padding: clamp(20px, 6vw, 28px);
+  }
+}
+
+/* Keep the supplied square Oakleigh pack fully visible at its approved larger size. */
+.professional-page #oakleigh-professional > .professional-product-media {
+  padding: clamp(24px, 2.8vw, 34px);
+  overflow: hidden;
+}
+.professional-page #oakleigh-professional .professional-product-media img {
+  width: auto;
+  height: auto;
+  max-width: min(82%, clamp(190px, 19vw, 270px));
+  max-height: 96%;
+  object-fit: contain;
+}
