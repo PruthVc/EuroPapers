@@ -901,6 +901,7 @@ footer * { color: inherit; }
 .product-image,
 .pro-editorial-image,
 .range-intro-media { border: 1px solid var(--ep-blue); }
+.consumer-page .family-collage { border: 0; }
 .catalogue-brand-professional .family-collage { background: var(--ep-blue) !important; border-color: var(--ep-white); }
 .catalogue-brand-professional .family-copy { background: var(--ep-white) !important; color: var(--ep-blue) !important; }
 .family-options,
@@ -1860,8 +1861,9 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   object-position: left center;
 }
 .accreditation-fsc img {
-  width: clamp(84px, 8vw, 116px);
-  height: clamp(96px, 11vw, 145px);
+  width: clamp(118px, 11vw, 166px);
+  height: auto;
+  max-height: clamp(182px, 16vw, 255px);
   object-fit: contain;
   object-position: left center;
 }
@@ -1929,7 +1931,7 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   }
   .accreditation-lockups figure { gap: 12px; }
   .accreditation-chsa img { height: 94px; }
-  .accreditation-fsc img { width: 76px; height: 94px; }
+  .accreditation-fsc img { width: clamp(106px, 30vw, 142px); height: auto; max-height: none; }
   .accreditation-lockups figcaption { font-size: 8px; }
   .accreditation-lockups figcaption strong { font-size: 10px; }
   .accreditation-guidance { grid-template-columns: 1fr; }
@@ -2628,4 +2630,140 @@ footer .project-credit a:hover { color: var(--gold-soft); border-color: var(--go
   max-width: min(82%, clamp(190px, 19vw, 270px));
   max-height: 96%;
   object-fit: contain;
+}
+
+/* On small screens, keep every Consumer product image and its details in one clear unit. */
+@media (max-width: 660px) {
+  .consumer-page .catalogue-family,
+  .consumer-page .catalogue-family-compact {
+    margin: 0 0 clamp(24px, 7vw, 32px);
+    border: 1px solid var(--ep-blue);
+    background: var(--ep-white);
+    overflow: hidden;
+  }
+  .consumer-page .catalogue-family + .catalogue-family { margin-top: 0; }
+  .consumer-page .family-collage,
+  .consumer-page .catalogue-family-compact .family-collage { border: 0; }
+  .consumer-page .family-copy,
+  .consumer-page .catalogue-family-compact .family-copy {
+    padding: clamp(28px, 7vw, 38px);
+    background: var(--ep-white);
+  }
+}
+
+/* Mirror the Consumer card grouping for the AFH range on small screens. */
+@media (max-width: 660px) {
+  .professional-page .professional-product-grid {
+    gap: clamp(24px, 7vw, 32px);
+    border: 0;
+    background: transparent;
+  }
+  .professional-page .professional-product-card,
+  .professional-page .professional-product-card:last-child {
+    width: auto;
+    border: 1px solid var(--ep-blue);
+    background: var(--ep-white);
+    overflow: hidden;
+  }
+  .professional-page .professional-product-card > .professional-product-media {
+    border: 0;
+  }
+  .professional-page .professional-product-card > div:last-child {
+    border-top: 0;
+    background: var(--ep-white);
+  }
+}
+
+/* Desktop AFH range follows the Consumer catalogue's full-width, alternating image-and-copy rhythm. */
+@media (min-width: 661px) {
+  .professional-page .professional-product-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1px;
+    border: 0;
+    background: var(--ep-blue);
+  }
+  .professional-page .professional-product-card,
+  .professional-page .professional-product-card:last-child {
+    width: auto;
+    min-height: clamp(420px, 39vw, 500px);
+    height: auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(300px, .95fr);
+    grid-column: auto;
+    justify-self: stretch;
+    border: 0;
+    background: var(--ep-white);
+  }
+  .professional-page .professional-product-card > .professional-product-media {
+    min-height: clamp(420px, 39vw, 500px);
+    height: auto;
+    padding: clamp(28px, 4.5vw, 58px);
+    border: 0;
+  }
+  .professional-page .professional-product-card > div:last-child {
+    min-height: 0;
+    padding: clamp(42px, 5.3vw, 82px);
+    border: 0;
+  }
+  .professional-page .professional-product-card:nth-child(even) > .professional-product-media { order: 2; }
+  .professional-page .professional-product-card:nth-child(even) > div:last-child { order: 1; }
+  .professional-page .professional-product-card h3 { font-size: clamp(45px, 5vw, 76px); }
+  .professional-page .professional-product-card p { max-width: 380px; font-size: 14px; }
+}
+
+/* The Professional range statement uses the same editorial hierarchy as Consumer Solutions. */
+.professional-page .professional-range-heading {
+  grid-template-columns: minmax(0, 1.35fr) minmax(250px, .8fr);
+  gap: clamp(42px, 8vw, 120px);
+  align-items: end;
+  margin-bottom: clamp(55px, 7vw, 94px);
+}
+.professional-page .professional-range-heading > .catalogue-brand-title {
+  display: block;
+  white-space: normal;
+}
+.professional-page .professional-range-heading > .catalogue-brand-title > p { margin: 0; }
+.professional-page .professional-range-heading > .catalogue-brand-title h2 {
+  margin: 22px 0 0;
+  font-size: clamp(54px, 6.7vw, 108px);
+  line-height: .89;
+  letter-spacing: -.075em;
+}
+.professional-page .professional-range-heading > .catalogue-brand-support {
+  max-width: 310px;
+  margin: 0 0 8px;
+  justify-self: start;
+  font-size: 15px;
+  line-height: 1.62;
+}
+
+@media (max-width: 900px) {
+  .professional-page .professional-range-heading {
+    grid-template-columns: minmax(0, 1.25fr) minmax(190px, .75fr);
+    gap: clamp(28px, 5vw, 48px);
+    margin-bottom: clamp(52px, 8vw, 72px);
+  }
+  .professional-page .professional-range-heading > .catalogue-brand-title h2 {
+    font-size: clamp(48px, 6.7vw, 60px);
+  }
+  .professional-page .professional-range-heading > .catalogue-brand-support {
+    max-width: 250px;
+    margin-bottom: 4px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 660px) {
+  .professional-page .professional-range-heading {
+    display: block;
+    margin-bottom: 49px;
+  }
+  .professional-page .professional-range-heading > .catalogue-brand-title h2 {
+    font-size: clamp(54px, 14.5vw, 75px);
+  }
+  .professional-page .professional-range-heading > .catalogue-brand-support {
+    margin-top: 30px;
+    margin-bottom: 0;
+    font-size: 14px;
+  }
 }
